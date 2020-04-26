@@ -19,3 +19,7 @@ class PostItem(scrapy.Item):
 	date = scrapy.Field()
 	push = scrapy.Field()
 	url = scrapy.Field()
+
+class contentItem(scrapy.Item):
+	title = scrapy.Field()
+	content = scrapy.Field()
