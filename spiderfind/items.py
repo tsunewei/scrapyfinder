@@ -23,3 +23,8 @@ class PostItem(scrapy.Item):
 class contentItem(scrapy.Item):
 	title = scrapy.Field()
 	content = scrapy.Field()
+
+class AmStockItem(scrapy.Item):
+	stockname = scrapy.Field() 
+	time = scrapy.Field() 
+	transaction = scrapy.Field() 
