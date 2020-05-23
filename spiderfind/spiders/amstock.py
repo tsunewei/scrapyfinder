@@ -21,6 +21,7 @@ class AmStockFind(scrapy.Spider):
 		item = AmStockItem()
 	
 		target = response.xpath('//td/a/@href').extract()
+		#target = response.xpath('//td/a/@href').extract()
 		#target = response.xpath('//td/font/text()').extract()
 		#word = response.xpath('//td/b/text()').extract() 
 		#href = response.xpath('//td/a/text()').extract() 
@@ -29,6 +30,9 @@ class AmStockFind(scrapy.Spider):
 
 	def fileWrite(self, target):
 		sFile = io.open('output/amstock.txt', 'w', encoding = 'UTF-8')
-		sFile.writelines(target)
+
+		for urldata in target:
+			urlbreak = urldata+"\n"
+			sFile.writelines(urlbreak)
 
 		sFile.close()	
